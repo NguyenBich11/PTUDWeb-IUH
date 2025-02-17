@@ -22,7 +22,7 @@
             <th col=3>Nội dung</th>
         </tr>
         <?php
-            for($i = 1; $i < 100; $i++) {
+            for($i = 1; $i <= 100; $i++) {
                 echo "<tr>
                             <td>$i</td>
                             <td>Tên Sách $i</td>

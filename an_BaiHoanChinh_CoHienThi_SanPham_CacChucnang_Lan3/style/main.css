@@ -1,0 +1,67 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+.container{
+    width: 1024px;
+    min-height: 800px;
+    margin: 0px auto;
+    background-color: blue;
+}
+
+
+.header{
+    height: 120px;
+    background-color: pink;
+    background-image: url("../hinhanh/hoabanlqd.jpg");
+}
+
+.nav{
+    height: 80px;
+    background-color: beige;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav ul li{
+    list-style-type: none;
+    display: inline-block;
+}
+
+.nav a{
+    text-decoration: none;
+}
+
+.content{
+    height: 520px;
+    background-color: black;
+    display: flex;
+}
+
+.section{
+    flex-basis: 30%;
+    background-color: aliceblue;
+}
+
+.section li{
+    list-style-type: none;
+}
+
+.section a{
+    text-decoration: none;
+}
+
+
+.aside{
+    flex-basis: 70%;
+    background-color: white;
+}
+
+.footer{
+    height: 80px;
+    background-color: green;
+}

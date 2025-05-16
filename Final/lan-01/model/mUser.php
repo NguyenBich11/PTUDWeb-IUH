@@ -1,5 +1,5 @@
 <?php 
-    include("cuoiky.php");
+    include_once("cuoiky.php");
 
     class mUser {
         public function mLogin($username, $password) {

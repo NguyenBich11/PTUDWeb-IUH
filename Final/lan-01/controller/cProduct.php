@@ -24,11 +24,33 @@
             return $tblProduct;
         }
 
-        public function cUpdateProduct($idProduct, $nameProduct, $originalPrice, $sellingPrice, $img) {
+        public function cUpdateProduct($idProduct, $nameProduct, $originalPrice, $sellingPrice, $img, $idBrand) {
             $p = new mProduct();
-            $rsUpdate = $p->mUpdateProduct($idProduct, $nameProduct, $originalPrice, $sellingPrice, $img);
+            $rsUpdate = $p->mUpdateProduct($idProduct, $nameProduct, $originalPrice, $sellingPrice, $img, $idBrand);
 
             if(!$rsUpdate) {
+                return false;
+            }
+
+            return true;
+        }
+
+        public function cDeleteProduct($idProduct) {
+            $p = new mProduct();
+            $rsDelete = $p->mDeleteProduct($idProduct);
+
+            if(!$rsDelete) {
+                return false;
+            }
+
+            return true;
+        }
+
+        public function cAddProduct($nameP, $originalPrice, $sellingPrice, $img, $idBrand) {
+            $p = new mProduct();
+            $rsAdd = $p->mAddProduct($nameP, $originalPrice, $sellingPrice, $img, $idBrand);
+
+            if(!$rsAdd) {
                 return false;
             }
 

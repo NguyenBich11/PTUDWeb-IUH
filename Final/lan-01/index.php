@@ -27,6 +27,7 @@
                 if(isset($_GET['func'])) {
                     switch($_GET['func']) {
                         case 'updateProduct': include("view/updateProduct.php"); break;
+                        case 'addProduct': include("view/addProduct.php"); break;
                         default: include("admin.php"); break;
                     }
                 }elseif(isset($_GET['act'])) {

@@ -1,5 +1,5 @@
 <h2>Quản lý sản phẩm</h2>
-<a href="" class="add-product">Thêm sản phẩm</a>
+<a href="index.php?act=admin&func=addProduct" class="add-product">Thêm sản phẩm</a>
 <table>
     <tr>
         <th>STT</th>
@@ -28,7 +28,7 @@
                             <td>'.$row['TenSP'].'</td>
                             <td>'.$row['GiaGoc'].'</td>
                             <td>'.$row['GiaBan'].'</td>
-                            <td>'.$row['HinhAnh'].'</td>
+                            <td> <img src="'.$row['HinhAnh'].'" style="width:50%"></td>
                             <td>'.$row['TenTH'].'</td>
                             <td>
                                 <form action="index.php?act=admin&func=updateProduct" method="post" name="formUpdate">
@@ -43,6 +43,19 @@
                             </td>
                         </tr>
                     ';
+                }
+            }
+
+            if(isset($_POST['idProductDelete'])) {
+                $rsDelete = $p->cDeleteProduct($_POST['idProductDelete']);
+
+                if($rsDelete == true) {
+                    echo "<script>alert('Xóa sản phẩm thành công')</script>";
+                    header("refresh:0.1;url=index.php?act=admin");
+                    exit();
+                } else {
+                    echo "<script>alert('Xóa không thành công')</script>";
+                    exit();
                 }
             }
         ?>
